@@ -237,7 +237,7 @@ aws iam put-role-policy \
 
 ```
 aws iam create-instance-profile \
-  --instance-profile-name kubernetes 
+  --instance-profile-name kubernetes
 ```
 
 ```
@@ -246,7 +246,7 @@ aws iam add-role-to-instance-profile \
   --role-name kubernetes
 ```
 
-### Chosing an Image
+### Choosing an Image
 
 Use the [Ubuntu Amazon EC2 AMI Locator](https://cloud-images.ubuntu.com/locator/ec2/) to find the right image-id for your zone. This guide assumes the `us-west-2` zone.
 
@@ -266,7 +266,7 @@ chmod 600 ~/.ssh/kubernetes_the_hard_way
 ```
 
 ```
-ssh-add ~/.ssh/kubernetes_the_hard_way 
+ssh-add ~/.ssh/kubernetes_the_hard_way
 ```
 
 #### SSH Access
@@ -313,7 +313,7 @@ aws ec2 modify-instance-attribute \
 aws ec2 create-tags \
   --resources ${CONTROLLER_0_INSTANCE_ID} \
   --tags Key=Name,Value=controller0
-``` 
+```
 
 ```
 CONTROLLER_1_INSTANCE_ID=$(aws ec2 run-instances \
@@ -339,7 +339,7 @@ aws ec2 modify-instance-attribute \
 aws ec2 create-tags \
   --resources ${CONTROLLER_1_INSTANCE_ID} \
   --tags Key=Name,Value=controller1
-``` 
+```
 
 ```
 CONTROLLER_2_INSTANCE_ID=$(aws ec2 run-instances \
@@ -365,7 +365,7 @@ aws ec2 modify-instance-attribute \
 aws ec2 create-tags \
   --resources ${CONTROLLER_2_INSTANCE_ID} \
   --tags Key=Name,Value=controller2
-``` 
+```
 
 #### Kubernetes Workers
 
